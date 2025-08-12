@@ -57,7 +57,7 @@ onMount(async() => {
         let newFilteredModels = [];
 
         if (mode === "GPT") {
-            newFilteredModels = availableModels.filter(model => model.id.includes('gpt') && !model.id.includes('vision'));
+            newFilteredModels = availableModels.filter(model => (model.id.includes('gpt') || model.id.includes('o1') || model.id.includes('o3') || model.id.includes('o4')) && !model.id.includes('vision'));
         } else if (mode === "GPT + Vision") {
             newFilteredModels = availableModels.filter(model => model.id.includes('vision'));
         } else if (mode === "Dall-E") {
@@ -295,13 +295,8 @@ handleClose();
           <p class="font-bold mb-2">
             Estimated Token Usage: {$combinedTokens.toFixed(0)}
           </p>
-          <p class="">
-            Estimated Cost with GPT-4: ${(
-              ($combinedTokens / 1000) *
-              0.02
-            ).toFixed(2)}</p>
              <p class="text-blue-300 transition underline text-xs hover:text-blue-500 mt-2">
-              <a href="https://openai.com/pricing" target="_blank" rel="noreferrer" >See all API pricing</a> </p>
+              <a href="https://openai.com/api/pricing/" target="_blank" rel="noreferrer" >See all API pricing</a> </p>
 
               <div class="mt-4">
                 <label for="show-tokens-toggle" class="flex items-center cursor-pointer">

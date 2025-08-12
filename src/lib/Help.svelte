@@ -36,7 +36,7 @@
           </ul>
   
           <div class="mb-1 mt-4">
-              <a href="https://github.com/agambon/SmoothGPT" target="_blank" rel="noreferrer"  class="text-blue-500 hover:text-blue-700">See the source code</a>
+              <a href="https://github.com/martijnlaan/SmoothGPT" target="_blank" rel="noreferrer"  class="text-blue-500 hover:text-blue-700">See the source code</a>
           </div>
           <div class="mb-1">
               <a href="https://platform.openai.com/api-keys" target="_blank" rel="noreferrer"  class="text-blue-500 hover:text-blue-700">Get an API key</a>
