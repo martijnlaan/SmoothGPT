@@ -151,12 +151,17 @@ export async function sendRequest(msg: ChatCompletionRequestMessage[], model: st
 
 function parseJSONChunks(rawData) {
   try {
-    // Match and parse JSON objects from the concatenated stream data
-    const jsonRegex = /\{"id".*?\]\}/g;
-    return (rawData.match(jsonRegex) || []).map(JSON.parse);
-  } catch (error) {
-    console.error("Error parsing JSON chunk:", error);
-    return null;
+    // Try single object first
+    return [JSON.parse(rawData)];
+  } catch {
+    try {
+      // Match and parse JSON objects from the concatenated stream data
+      const jsonRegex = /\{"id".*?\].*?\}/g;
+      return (rawData.match(jsonRegex) || []).map(JSON.parse);
+    } catch (error) {
+      console.error("Error parsing JSON chunk:", error);
+      return null;
+    }
   }
 }
 
