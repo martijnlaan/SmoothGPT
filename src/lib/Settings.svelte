@@ -212,6 +212,7 @@ handleClose();
       on:click={checkAPIConnection}
     >Check API</button>
   </div>
+  <a href="https://platform.openai.com/api-keys" target="_blank" rel="noreferrer" class="block mt-2 text-blue-300 transition underline text-xs hover:text-blue-500">Get an API key</a>
   <p
   class="mt-2 text-white rounded-lg p-2 
   {($showMessage === 'yellow' ? 'bg-yellow-600' : '')} 
